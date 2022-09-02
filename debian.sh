@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## Are you running this script as root?
+## Check Root
 if [[ "${UID}" -ne 0 ]]
 then
  echo 'Please run this script as "root"' >&2
