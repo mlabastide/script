@@ -36,10 +36,10 @@ maxretry = 4
 " >> /etc/fail2ban/jail.local
 
 ## Create new user with needed directories
-adduser mlab
-usermod -G sudo test
-mkdir /home/mlab/Documents
-mkdir /home/mlab/Downloads
+adduser mlabastide
+usermod -G sudo mlabastide
+mkdir /home/mlabastide/Documents
+mkdir /home/mlabastide/Downloads
 
 echo 'sudo user created'
 
