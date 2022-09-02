@@ -17,7 +17,7 @@ apt install openssh-server -y
 
 ## Install and Enable firewall
 apt install ufw -y
-ufw enable
+ufw enable -y
 ufw allow 22
 echo 'Firewall Enabled'
 
