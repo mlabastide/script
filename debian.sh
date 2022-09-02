@@ -17,8 +17,8 @@ apt install openssh-server -y
 
 ## Install and Enable firewall
 apt install ufw -y
-ufw enable -y
 ufw allow 22
+ufw --force enable
 echo 'Firewall Enabled'
 
 ## Install Fail2Ban
