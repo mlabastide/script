@@ -45,8 +45,13 @@ echo "Unattended-Upgrade::Allowed-Origins {
 #Unattended-Upgrade::Automatic-Reboot "true";
 #}; " >> /etc/apt/apt.conf.d/50unattended-upgrades
 
+## Install Bottom
+curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.3/bottom_0.6.3_amd64.deb
+sudo dpkg -i bottom_0.6.3_amd64.deb
+
+
 ## Most used Packages installation
-PACKAGES="mlocate neofetch speedtest-cli rclone fzf btm ranger thefuck"
+PACKAGES="mlocate neofetch speedtest-cli rclone fzf ranger thefuck"
 
 apt install $PACKAGES -y
 
