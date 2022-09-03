@@ -7,8 +7,8 @@ then
  exit 1
 fi
 
-##  System Update
-apt update && apt upgrade -y
+## Update
+apt update
 
 echo 'System is up to date'
 
@@ -63,5 +63,7 @@ mkdir /home/mlabastide/Downloads
 
 echo 'sudo user created'
 
+## Upgrade
+apt upgrade -y
 ## Clean up
 apt autoremove -y
