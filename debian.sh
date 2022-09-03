@@ -35,14 +35,6 @@ logpath = /var/log/auth.log
 maxretry = 4
 " >> /etc/fail2ban/jail.local
 
-## Create new user with needed directories
-adduser mlabastide
-usermod -G sudo mlabastide
-mkdir /home/mlabastide/Documents
-mkdir /home/mlabastide/Downloads
-
-echo 'sudo user created'
-
 ## Unattended Upgrades
 sudo apt-get install -y unattended-upgrades
 echo "Unattended-Upgrade::Allowed-Origins {
@@ -57,6 +49,14 @@ echo "Unattended-Upgrade::Allowed-Origins {
 PACKAGES="mlocate neofetch speedtest-cli rclone fzf btm ranger thefuck"
 
 apt install $PACKAGES -y
+
+## Create new user with needed directories
+adduser mlabastide
+usermod -G sudo mlabastide
+mkdir /home/mlabastide/Documents
+mkdir /home/mlabastide/Downloads
+
+echo 'sudo user created'
 
 ## Clean up
 apt autoremove -y
