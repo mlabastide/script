@@ -8,7 +8,7 @@ then
 fi
 
 ## Update
-apt update
+apt update -y
 
 echo 'System is up to date'
 
