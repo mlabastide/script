@@ -7,6 +7,13 @@ then
  exit 1
 fi
 
+## Fetch Packages
+#Tailscale
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+#Bottom
+curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.3/bottom_0.6.3_amd64.deb
+
 ## Update
 apt update -y
 
@@ -45,12 +52,12 @@ echo "Unattended-Upgrade::Allowed-Origins {
 #Unattended-Upgrade::Automatic-Reboot "true";
 #}; " >> /etc/apt/apt.conf.d/50unattended-upgrades
 
-## Install Bottom
-curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.3/bottom_0.6.3_amd64.deb
-sudo dpkg -i bottom_0.6.3_amd64.deb
+## Install Bottom & Tailscale
+apt install tailscale
+dpkg -i bottom_0.6.3_amd64.deb
 
 
-## Most used Packages installation
+## Common Packages
 PACKAGES="mlocate neofetch speedtest-cli rclone fzf ranger thefuck"
 
 apt install $PACKAGES -y
