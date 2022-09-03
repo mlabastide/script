@@ -54,7 +54,7 @@ echo "Unattended-Upgrade::Allowed-Origins {
 #}; " >> /etc/apt/apt.conf.d/50unattended-upgrades
 
 ## Most used Packages installation
-PACKAGES="mlocate neofetch"
+PACKAGES="mlocate neofetch speedtest-cli"
 
 apt install $PACKAGES -y
 
