@@ -58,7 +58,7 @@ dpkg -i bottom_0.6.3_amd64.deb
 
 
 ## Common Packages
-PACKAGES="mlocate neofetch speedtest-cli rclone fzf ranger thefuck"
+PACKAGES="mlocate neofetch speedtest-cli rclone fzf ranger thefuck nano"
 
 apt install $PACKAGES -y
 
