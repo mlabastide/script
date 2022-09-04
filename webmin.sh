@@ -1,3 +1,10 @@
+## Check Root
+if [[ "${UID}" -ne 0 ]]
+then
+ echo 'Please run this script as "root"' >&2
+ exit 1
+fi
+
 echo "deb http://download.webmin.com/download/repository sarge contrib" | sudo tee /etc/apt/sources.list.d/webmin.list
 cd ~/
 wget http://www.webmin.com/jcameron-key.asc
