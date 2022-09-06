@@ -10,7 +10,8 @@ cd ~/
 wget http://www.webmin.com/jcameron-key.asc
 apt-key add jcameron-key.asc
 rm jcameron-key.asc
-apt-get update
-apt-get install libapt-pkg-perl libnet-ssleay-perl libauthen-pam-perl libio-pty-perl apt-show-versions
-apt-get install webmin
+apt-get update -y
+apt-get install libapt-pkg-perl libnet-ssleay-perl libauthen-pam-perl libio-pty-perl apt-show-versions -y
+apt-get install webmin -y
+ufw allow 10000
 echo 'USE HTTPS on port 10000'
