@@ -150,7 +150,7 @@ if [[ ( $y == "y" || $y == "Y" ) ]];then
 fi
 
 ## Install freecad
-echo "Would you like to install freecad?[y/n]
+echo "Would you like to install freecad?[y/n]"
 read y
 if [[ ( $yy == "y" || $y == "Y" ) ]];then
   apt install freecad
