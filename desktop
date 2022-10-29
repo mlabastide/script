@@ -153,14 +153,14 @@ fi
 echo "Would you like to install freecad?[y/n]"
 read y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
-  apt install freecad
+  apt install freecad -y
 fi
 
 ## Install tilix
 echo "Would you like to install tilix?[y/n]"
 read y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
-  apt install tilix
+  apt install tilix -y
 fi
 
 ## new-user
