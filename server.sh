@@ -177,12 +177,13 @@ else
 echo "$user has been created with restricted access"
 fi
 
+## Cleanup
 echo "One last thing, We need to update the system and clean up some installation files"
 sleep 2
 apt upgrade -y
 apt autoremove -y
 apt-get autoremove -y
-
+rm bottom_0.6.3_amd64.deb
 echo "We must reboot, would you like to do this now"
 read y
 if [[ ( $y == "y" || $y == "Y" ) ]]
