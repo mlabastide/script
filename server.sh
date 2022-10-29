@@ -49,8 +49,6 @@ then
 apt install fail2ban -y
 systemctl enable fail2ban
 systemctl start fail2ban
-fi
-
 echo "
 [sshd]
 enabled = true
@@ -59,6 +57,7 @@ filter = sshd
 logpath = /var/log/auth.log
 maxretry = 4
 " >> /etc/fail2ban/jail.local
+fi
 
 ## Install Tailscale
 echo "Would you like to install tailscale?"
