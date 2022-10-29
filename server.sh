@@ -157,6 +157,25 @@ then
 apt install net-tools -y
 fi
 
+## new-user
+echo "Let's setup a user?"
+sleep 1
+echo "Pleae enter a username"
+read user
+adduser $user
+wait
+mkdir /home/$user/Documents
+mkdir /home/$user/Downloads
+echo "Should this user be sudo?"
+read y
+if [[ ( $y == "Y" || $y == "y" ) ]]
+then
+usermod -G sudo $user
+echo "$user has been created and added to the sudo group"
+else
+echo "$user has been created with restricted access"
+fi
+
 ## Cleanup
 echo "One last thing, We need to update the system and clean up some installation files"
 sleep 2
