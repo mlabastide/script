@@ -180,7 +180,9 @@ sleep 2
   apt upgrade -y
   apt autoremove -y
   apt-get autoremove -y
-
+  rm bottom_0.6.3_amd64.deb
+  
+## Reboot
   echo "We must reboot, would you like to do this now"
 read y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
