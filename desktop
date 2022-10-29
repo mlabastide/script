@@ -172,7 +172,7 @@ sleep 2
   rm bottom_0.6.3_amd64.deb
   
 ## Reboot
-  echo "We must reboot, would you like to do this now"
+  echo "We must reboot, would you like to do this now.[y/n"
 read y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   reboot now
