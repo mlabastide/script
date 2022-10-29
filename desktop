@@ -152,21 +152,28 @@ fi
 ## Install freecad
 echo "Would you like to install freecad?[y/n]"
 read y
-if [[ ( $yy == "y" || $y == "Y" ) ]];then
+if [[ ( $y == "y" || $y == "Y" ) ]];then
   apt install freecad
 fi
 
-## new-user
-echo "Let's setup a user?"
-sleep 1
-echo "Pleae enter a username"
-read user
-adduser $user
-wait
-mkdir /home/$user/Documents
-mkdir /home/$user/Downloads
-echo "Should this user be sudo?"
+## Install tilix
+echo "Would you like to install tilix?[y/n]"
 read y
+if [[ ( $y == "y" || $y == "Y" ) ]];then
+  apt install tilix
+fi
+
+## new-user
+echo "Would you like setup another user?"
+if [[ ( $yy == "y" || $y == "Y" ) ]];then
+  echo "Pleae enter a username"
+  read user
+  adduser $user
+  wait
+  mkdir /home/$user/Documents
+  mkdir /home/$user/Downloads
+  echo "Should this user be sudo?"
+  read y
 if [[ ( $y == "Y" || $y == "y" ) ]];then
   usermod -G sudo $user
   echo "$user has been created and added to the sudo group"
