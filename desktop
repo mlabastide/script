@@ -157,15 +157,15 @@ if [[ ( $yy == "y" || $y == "Y" ) ]];then
 fi
 
 ## new-user
-  echo "Let's setup a user?"
+echo "Let's setup a user?"
 sleep 1
-  echo "Pleae enter a username"
+echo "Pleae enter a username"
 read user
-  adduser $user
+adduser $user
 wait
-  mkdir /home/$user/Documents
-  mkdir /home/$user/Downloads
-  echo "Should this user be sudo?"
+mkdir /home/$user/Documents
+mkdir /home/$user/Downloads
+echo "Should this user be sudo?"
 read y
 if [[ ( $y == "Y" || $y == "y" ) ]];then
   usermod -G sudo $user
