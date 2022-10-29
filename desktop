@@ -45,9 +45,7 @@ if [[ ( $y == "y" || $y == "Y" ) ]];then
   apt install fail2ban -y
   systemctl enable fail2ban
   systemctl start fail2ban
-fi
-
-echo "
+  echo "
 [sshd]
 enabled = true
 port = 22
@@ -55,6 +53,7 @@ filter = sshd
 logpath = /var/log/auth.log
 maxretry = 4
 " >> /etc/fail2ban/jail.local
+fi
 
 ## Install Tailscale
 echo "Would you like to install tailscale?[y/n]"
@@ -163,23 +162,6 @@ if [[ ( $y == "y" || $y == "Y" ) ]];then
   apt install tilix -y
 fi
 
-## new-user
-echo "Would you like setup another user?"
-if [[ ( $yy == "y" || $y == "Y" ) ]];then
-  echo "Pleae enter a username"
-  read user
-  adduser $user
-  wait
-  mkdir /home/$user/Documents
-  mkdir /home/$user/Downloads
-  echo "Should this user be sudo?"
-  read y
-if [[ ( $y == "Y" || $y == "y" ) ]];then
-  usermod -G sudo $user
-  echo "$user has been created and added to the sudo group"
-else
-  echo "$user has been created with restricted access"
-fi
 
 ## Cleanup
   echo "One last thing, We need to update the system and clean up some installation files"
