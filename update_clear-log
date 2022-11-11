@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## Make sure to add this file location to the end of "/etc/bash.bashrc"
+## Make sure to "chmod +x" and add this file location to the end of "/etc/bash.bashrc"
 ## so it will automagicly run when user logs in.
 
 ## This script if for Airworx Raspberry Pi's
