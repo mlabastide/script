@@ -27,7 +27,7 @@ else
 echo "Upgrade not complete"
 fi
 
-echo "Would you like to clear logs?"
+echo "Would you like to clear logs?(Y/n)"
 read answer2
 if [[ ( $answer2 == "Y" || $answer2 == "y" ) ]]
 then
