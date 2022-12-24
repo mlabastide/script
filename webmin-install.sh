@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## Check Root
 if [[ "${UID}" -ne 0 ]]
 then
