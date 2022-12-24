@@ -6,7 +6,7 @@ then
 fi
 
 echo "deb http://download.webmin.com/download/repository sarge contrib" | sudo tee /etc/apt/sources.list.d/webmin.list
-cd ~/
+cd ~/ || exit
 wget http://www.webmin.com/jcameron-key.asc
 apt-key add jcameron-key.asc
 rm jcameron-key.asc

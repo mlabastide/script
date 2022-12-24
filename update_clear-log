@@ -16,7 +16,7 @@
 
 ## Update and Upgrade
 echo "Would you like to update and upgrade now?(Y/n)"
-read answer
+read -r answer
 if [[ ( $answer == "Y" || $answer == "y" ) ]]
 then
         sudo apt-get update
@@ -28,7 +28,7 @@ echo "Upgrade not complete"
 fi
 
 echo "Would you like to clear logs?(Y/n)"
-read answer2
+read -r answer2
 if [[ ( $answer2 == "Y" || $answer2 == "y" ) ]]
 then
 echo "1. Opening NCDU, you must choose the logs you would like to remove."

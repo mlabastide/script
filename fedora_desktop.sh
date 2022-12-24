@@ -21,26 +21,26 @@ dnf update -y
 
 echo 'System is up to date'
 echo "Would you like to install OpenSSH?[y/n]"
-read n
+read -r n
 if [[ ( $n == "y" || $n == "Y" ) ]];then
   dnf install openssh-server -y
 fi
 
 ## Install and Enable firewall
 echo "Would you like to install a Firewall?[y/n]"
-read Y
+read -r Y
 if [[ ( $Y == "Y" || $Y == "y" ) ]];then
   dnf install ufw -y
   echo "What ports would you like opened[1-10000"
-  read ports
-  ufw allow $ports
+  read -r ports
+  ufw allow "$ports"
   ufw --force enable
   ufw status
 fi
 
 ## Install Fail2Ban
 echo "Would you like to install Fail2Ban?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install fail2ban -y
   systemctl enable fail2ban
@@ -57,28 +57,28 @@ fi
 
 ## Install Tailscale
 echo "Would you like to install tailscale?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install tailscale -y
 fi
 
 ## Install Bottom
 echo "Would you like to install bottom system monitor?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dpkg -i bottom_0.6.3_amd64.deb
 fi
 
 ## Install neofetch
 echo "Would you like to install neofetch ?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install neofetch -y
 fi
 
 ## Install mlocate
 echo "Would you like to install mlocate ?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install mlocate -y
   update db
@@ -86,7 +86,7 @@ fi
 
 ## Install speedtest-cli
 echo "Would you like to install speedtest?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install speedtest-cli -y
   speedtest
@@ -94,70 +94,70 @@ fi
 
 ## Install rclone
 echo "Would you like to install rclone?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install rclone -y
 fi
 
 ## Install ncdu 
 echo "Would you like to install NCurses DisK Usage?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install ncdu -y
 fi
 
 ## Install ranger
 echo "Would you like to install ranger CLI file manager?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install ranger -y
 fi
 
 ## Install fuck
 echo "Would you like to install fuck?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install thefuck -y
 fi
 
 ## Install nano
 echo "Would you like to install nano?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install nano -y
 fi
 
 ## Install xsensors
 echo "Would you like to install xsensors?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install xsensors -y
 fi
 
 ## Install net-tools
 echo "Would you like to install net tools?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install net-tools -y
 fi
 
 ## Install thunderbird
 echo "Would you like to install thunderbird?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install thunderbird -y
 fi
 
 ## Install freecad
 echo "Would you like to install freecad?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install freecad -y
 fi
 
 ## Install tilix
 echo "Would you like to install tilix?[y/n]"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   dnf install tilix -y
 fi
@@ -173,7 +173,7 @@ sleep 2
   
 ## Reboot
   echo "We must reboot, would you like to do this now.[y/n"
-read y
+read -r y
 if [[ ( $y == "y" || $y == "Y" ) ]];then
   reboot now
   else
