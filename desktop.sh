@@ -19,7 +19,10 @@ curl -LO https://github.com/ClementTsang/bottom/releases/download/0.6.3/bottom_0
 ## Update
 apt update -y
 
-echo 'System is up to date'
+echo '
+#####################
+System is up to date
+#####################'
 echo "Would you like to install OpenSSH?[y/n]"
 read -r n
 if [[ ( $n == "y" || $n == "Y" ) ]];then
