@@ -8,7 +8,7 @@ apt upgrade -y
 apt install -y build-essential curl git htop unzip
 
 # Set the timezone
-timedatectl set-timezone America/New_York
+timedatectl set-timezone America/Indianapolis
 
 # Create a new user
 read -p "Enter username: " username
