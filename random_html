@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random 4-Digit Number Generator</title>
+</head>
+<body>
+  <button id="generateBtn">Generate Random Number</button>
+  <p id="result"></p>
+
+  <script>
+    // Get the generate button element
+    const generateBtn = document.getElementById('generateBtn');
+    // Get the result element
+    const result = document.getElementById('result');
+
+    // Define a function to generate a random 4-digit number that does not repeat
+    function generateRandomNumber() {
+      // Create an array with the numbers 0-9
+      const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      // Shuffle the array using the Fisher-Yates shuffle algorithm
+      for (let i = numbers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [numbers[i], numbers[j]] = [numbers[j], numbers[i]];
+      }
+      // Return the first four elements of the shuffled array as a 4-digit number
+      return numbers.slice(0, 4).join('');
+    }
+
+    // Add an event listener to the generate button to generate a random number when clicked
+    generateBtn.addEventListener('click', () => {
+      result.textContent = generateRandomNumber();
+    });
+  </script>
+</body>
+</html>
